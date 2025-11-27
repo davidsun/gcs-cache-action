@@ -15,29 +15,7 @@ async function getTarCompressionMethod(): Promise<CompressionMethod> {
   if (process.platform === 'win32') {
     return CompressionMethod.GZIP;
   }
-
-  const [zstdOutput, zstdVersion] = await exec
-    .getExecOutput('zstd', ['--version'], {
-      ignoreReturnCode: true,
-      silent: true,
-    })
-    .then((out) => out.stdout.trim())
-    .then((out) => {
-      const extractedVersion = /v(\d+(?:\.\d+){0,})/.exec(out);
-      return [out, extractedVersion ? extractedVersion[1] : null];
-    })
-    .catch(() => ['', null]);
-
-  if (!zstdOutput?.toLowerCase().includes('zstd command line interface')) {
-    return CompressionMethod.GZIP;
-  } else if (
-    !zstdVersion ||
-    semver.lt(zstdVersion, ZSTD_WITHOUT_LONG_VERSION)
-  ) {
-    return CompressionMethod.ZSTD_WITHOUT_LONG;
-  } else {
-    return CompressionMethod.ZSTD;
-  }
+  return CompressionMethod.ZSTD_WITHOUT_LONG;
 }
 
 export async function createTar(
