@@ -1,4 +1,4 @@
-name: 'Google Cloud Storage Cache'
+name: 'Google Cloud Storage Cache (Extended)'
 author: 'MansaGroup'
 description: 'Cache your workload to a Google Cloud Storage bucket'
 

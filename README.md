@@ -1,6 +1,6 @@
 ![Banner](.github/assets/banner-thin.png)
 
-# Google Cloud Storage Cache Action
+# Google Cloud Storage Cache Action (Extended)
 
 ![License](https://img.shields.io/github/license/MansaGroup/gcs-cache-action?style=flat-square) ![GitHub Issues](https://img.shields.io/github/issues/mansagroup/gcs-cache-action?style=flat-square) ![GitHub Stars](https://img.shields.io/github/stars/MansaGroup/gcs-cache-action?style=flat-square)
 
