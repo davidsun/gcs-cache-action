@@ -15,7 +15,7 @@ async function getTarCompressionMethod(): Promise<CompressionMethod> {
   if (process.platform === 'win32') {
     return CompressionMethod.GZIP;
   }
-  return CompressionMethod.ZSTD_WITHOUT_LONG;
+  return CompressionMethod.ZSTD;
 }
 
 export async function createTar(
